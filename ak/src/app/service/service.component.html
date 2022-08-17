@@ -1,24 +1,22 @@
+<app-sidebar></app-sidebar>
 <section id="main">
-    
 
     <div class="col-md-12">
         <div class="mainpage">
-            <app-sidebar></app-sidebar>
+            
             <div class="product col-md-11">
                 <div class="container">
                     <div class="row">
                         <div class="service animate__fadeInLeft col-md-3">
                             <div class="pro-title">
-                                <h2>{{title}}</h2>
+                                <a routerLink="/hizmetler">{{title}}</a >
                             </div>
                             
                             <div class="pro-group-alt-title" *ngFor="let category of categories" >
                                 <div class="service-title ">
-                                    <a (click)="toggleShow()" routerLink="/hizmetler/{{category.name}}">{{category.name|uppercase}}</a>
+                                    <a (click)="toggleShow()" routerLink="/hizmetler/{{category.id}}" >{{category.name|uppercase}}</a>
                                 </div>
-                                <!-- <div class="service-title">
-                                    <h3>LABORATUVAR</h3>
-                                </div> -->
+                                
                             </div>
 
                         </div>
@@ -27,13 +25,13 @@
                             <div class="container-fluid">
                                 <div class="row">
 
-                                    <div class="col-md-7"  >
+                                    <div class="col-md-7" *ngIf="serviceDetail" >
                                         <div class="service-detail">
                                             <div class="service-img">
-                                                <img src="../../assets/img/services-img.jpg" alt="">
+                                                <img [src]="serviceDetail[0].categoryImg" alt="">
                                             </div>
                                             <div class="service-detail-desc">
-                                                <p></p>
+                                                <p>{{serviceDetail[0].description}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -53,4 +51,5 @@
     </div>
 
 </section>
+
 

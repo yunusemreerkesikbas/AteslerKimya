@@ -3,12 +3,12 @@
         <div class="mainpage">
 
             <app-sidebar></app-sidebar>
-            <div class="product  col-md-11">
+            <div class="product col-md-10" style="margin-left: 100px;">
                 <div class="container">
                     <div class="row">
                         <div class="pro-animation col-md-3 animate__fadeInLeft">
                             <div class="pro-title">
-                                <h2>ÜRÜNLER</h2>
+                                <h2>{{title}}</h2>
                             </div>
                             <div class="pro-group ">
                                 <div class="pro-group-title">
@@ -43,85 +43,21 @@
                                 <div class="row">
 
 
-                                    <div class="pro animate__fadeInUp col-md-4">
+                                    <div class="pro animate__fadeInUp col-md-4" *ngFor="let product of products">
                                         <div class="pro-image">
-                                            <img src="../../assets/img/pro-image-card-1.jpg" alt="">
+                                            <img [src]="product.img" alt="">
                                         </div>
                                         <div class="img-detail">
                                             <div class="detail-button">
-                                                <a href="product-group-gida.html">GIDA KİMYASALLARI</a>
+                                                <a routerLink="/urunler/{{product.slug}}">
+                                                    <p><span>{{product.name}}</span></p>
+                                                </a>
                                             </div>
-                                            <!-- <div class="detail-icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </div> -->
+                                            
 
                                         </div>
                                     </div>
-                                    <div class="pro animate__fadeInUp col-md-4">
-                                        <div class="pro-image">
-                                            <img src="../../assets/img/pro-image-card-1.jpg" alt="">
-                                        </div>
-                                        <div class="img-detail">
-                                            <div class="detail-button">
-                                                <a href="product-group-metal.html">METAL KİMYASALLARI</a>
-                                            </div>
-                                            <!-- <div class="detail-icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                    <div class="pro animate__fadeInUp col-md-4">
-                                        <div class="pro-image">
-                                            <img src="../../assets/img/pro-image-card-1.jpg" alt="">
-                                        </div>
-                                        <div class="img-detail">
-                                            <div class="detail-button">
-                                                <a href="#">DETERJAN KİMYASALLARI</a>
-                                            </div>
-                                            <!-- <div class="detail-icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                    <div class="pro animate__fadeInUp col-md-4">
-                                        <div class="pro-image">
-                                            <img src="../../assets/img/pro-image-card-1.jpg" alt="">
-                                        </div>
-                                        <div class="img-detail">
-                                            <div class="detail-button">
-                                                <a href="#">İNŞAAT KİMYASALLARI</a>
-                                            </div>
-                                            <!-- <div class="detail-icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                    <div class="pro animate__fadeInUp col-md-4">
-                                        <div class="pro-image">
-                                            <img src="../../assets/img/pro-image-card-1.jpg" alt="">
-                                        </div>
-                                        <div class="img-detail">
-                                            <div class="detail-button">
-                                                <a href="#">PLASTİK KİMYASALLARI</a>
-                                            </div>
-                                            <!-- <div class="detail-icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                    <div class="pro animate__fadeInUp col-md-4">
-                                        <div class="pro-image">
-                                            <img src="../../assets/img/pro-image-card-1.jpg" alt="">
-                                        </div>
-                                        <div class="img-detail">
-                                            <div class="detail-button">
-                                                <a href="#">TARIM KİMYASALLARI</a>
-                                            </div>
-                                            <!-- <div class="detail-icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </div> -->
-                                        </div>
-                                    </div>
+                                    
 
                                 </div>
                             </div>

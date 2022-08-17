@@ -280,7 +280,9 @@ a {
     color: #fff;
     font-size: 17px;
 }
-
+.mainpage .product {
+    margin-left: 100px;
+}
 .mainpage .product .pro-animation {
     animation: fadeInLeft;
     animation-duration: 2s;
@@ -308,7 +310,7 @@ a {
 
 .mainpage .product .pro-group h1 {
     color: #fff;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .mainpage .product .pro-group i {
@@ -327,7 +329,7 @@ a {
 }
 
 .mainpage .product .pro-desc p {
-    font-size: 15px;
+    font-size: 12px;
     line-height: 20px;
 }
 
@@ -357,6 +359,14 @@ a {
 .pro-card-container .pro .img-detail:hover {
     background-color: #271132;
 }
+.pro-card-container .pro .img-detail .detail-button:hover a p span {
+    display: none;
+}
+.pro-card-container .pro .detail-button:hover a::after    {
+    content: 'DETAYLI BİLGİ';
+    color: #fff;
+    font-size: 18px;
+}
 
 .pro-card-container .pro .img-detail:hover a {
     color: #fff;
@@ -370,7 +380,7 @@ a {
 }
 
 .product .product-category {
-    padding: 15px 20px 15px 15px;
+    padding: 10px 15px 10px 15px;
     border: 1px solid #fff;
     background-color: #fff;
 }
@@ -436,7 +446,7 @@ a {
 }
 
 .pro-category-list .pro-category.image .detail-title p {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     color: #000;
 }
@@ -456,7 +466,7 @@ a {
     color: #000;
     line-height: 20px;
     letter-spacing: .8px;
-    font-size: 13px;
+    font-size: 10px;
 }
 
 
@@ -525,8 +535,8 @@ footer#ak-footer {
     padding: 0;
     margin: 0 20px 0 0;
     list-style: none;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     background-color: #fff;
     border-radius: 50%;
     display: flex;
@@ -587,20 +597,31 @@ footer#ak-footer {
 .service .pro-title {
     margin-bottom: 50px
 }
+.service .pro-title:hover a {
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    transition: 300ms;
+}
 .service .pro-group-alt-title .service-title{
     cursor: pointer;
     color: #fff;
+    padding: 15px 0!important;
+    margin-bottom: 10px;
 
 }
-.service .pro-group-alt-title .service-title.active {
+.service .pro-group-alt-title .service-title:hover {
     background-color: #fff;
-    padding-left: 15px;
-    margin-bottom: 20px;
+    color: #000;
+    padding: 0;
 }
-
-.service .pro-group-alt-title .service-title.active h3 {
+.service .pro-group-alt-title .service-title:hover a {
     color: #000;
 }
+
+/* .service .pro-group-alt-title .service-title.active h3 {
+    color: #000;
+} */
 
 
 .service-container {

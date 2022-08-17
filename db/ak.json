@@ -1,0 +1,28 @@
+{
+    "services": [
+        {
+            "id": 1,
+            "name": "STOKLAMA",
+            "slug": "stoklama"
+        },
+        {
+            "id": 2,
+            "name": "LABORATUVAR",
+            "slug": "laboratuvar"
+        }
+    ],
+    "serviceDetail": [
+        {
+            "id": 1,
+            "serviceId": 1,
+            "serviceImg": "https://i.dunya.com/storage/files/images/2021/02/04/depo-S7By_cover.jpg",
+            "description": "Stoklama detay sayfası"
+        },
+        {
+            "id": 2,
+            "serviceId": 2,
+            "serviceImg": "https://i.dunya.com/storage/files/images/2021/02/04/depo-S7By_cover.jpg",
+            "description": "Laboratuvar detay sayfası"
+        }
+    ]
+}

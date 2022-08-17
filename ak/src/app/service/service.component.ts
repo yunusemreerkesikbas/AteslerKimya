@@ -1,6 +1,8 @@
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { DetailService } from './detail';
-import { Service } from './service';
+import { ServiceDetail } from './detail';
+// import { Service } from './service/service';
+import { ServicesService } from '../services/services.service';
 
 @Component({
   selector: 'app-service',
@@ -8,41 +10,60 @@ import { Service } from './service';
   styleUrls: ['./service.component.css']
 })
 export class ServiceComponent implements OnInit {
-  isShown: boolean = false;
+  // heroes = ServicesService;
+  // selectedHero?: ServicesService["categoryDetail"];
+  constructor(
+    private route: ActivatedRoute,
+    private service: ServicesService
+  ) { }
 
-  constructor() { }
+  isShown: boolean = true ;
+  // public isActive: boolean = false;
+  // getMenuId: any;
+  serviceDetail: any;
+
+  currentPage: any;
+  
+
+
   title: "HİZMETLER" = "HİZMETLER";
-  services: Service[] = [];
-  details: DetailService[] = [];
   categories = [
     {
-      id:1,
+      id: 1,
       name: "stoklama",
     },
     {
-      id:2,
+      id: 2,
       name: "laboratuvar",
     }
   ]
-  categoryDetail = [
-    {
-      id:1,
-      categoryId:1,
-      categoryImg: 'url(../../assets/img/services-img.jpg)',
-      description: "Stoklama detay sayfası"
-    },
-    {
-      id:2,
-      categoryId:2,
-      categoryImg: 'url(../../assets/img/services-img.jpg)',
-      description: "Laboratuvar detay sayfası"
-    },
-  ]
+
+
+
+
   ngOnInit(): void {
+
+    this.route.params.subscribe(params => {
+      this.currentPage = params['categoryid'];
+      console.log(this.currentPage)
+    });
+
+    if (this.currentPage) {
+      this.serviceDetail = this.service.categoryDetail.filter((value) => {
+        let data = value.id == this.currentPage;
+        this.currentPage = this.currentPage
+        return data;
+      });
+      console.log(this.serviceDetail);
+    }
+    return this.serviceDetail;
+
+
   }
   toggleShow() {
-    this.isShown = ! this.isShown;
-    
-    }
+    this.isShown = !this.isShown;
+  }
+  
+
 
 }

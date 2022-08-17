@@ -1,0 +1,8 @@
+.service .pro-group-alt-title .service-title:hover  {
+    background-color: #fff;
+    padding: 15px 0;
+}
+.service .pro-group-alt-title .service-title:hover a {
+    color: #000;
+
+}

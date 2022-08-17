@@ -13,6 +13,7 @@ import { ServiceComponent } from './service/service.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PageDetailComponent } from './page-details/page-detail/page-detail.component';
 import { ContactComponent } from './contact/contact.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ContactComponent } from './contact/contact.component';
     ServiceComponent,
     SidebarComponent,
     PageDetailComponent,
-    ContactComponent
+    ContactComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
