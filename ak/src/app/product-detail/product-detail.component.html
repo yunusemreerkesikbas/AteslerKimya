@@ -1,6 +1,6 @@
 <!-- <app-navbar></app-navbar> -->
 
-<section id="main">
+<section id="main" >
     <div class="col-md-12">
         <div class="mainpage" style="margin: 20px 0 0 40px;">
 
@@ -14,7 +14,7 @@
                             </div>
                             <div class="pro-group">
                                 <div class="pro-group-title">
-                                    <h1>SEKTÖRE GÖRE</h1>
+                                    <h1>{{group_title}}</h1>
                                 </div>
                                 <div class="icon">
                                     <i class="fa-solid fa-arrow-left"></i>
@@ -23,7 +23,7 @@
                             </div>
                             <div class="pro-group-alt-title">
                                 <div>
-                                    <h3>ÜRÜN GRUPLARI</h3>
+                                    <h3>{{group_alt_title}}</h3>
                                 </div>
                             </div>
                             <div class="product-category">
@@ -53,66 +53,23 @@
                             <div class="container-fluid">
                                 <div class="row">
 
-                                    <div class="pro-category li col-md-3">
-                                        <ul>
-                                            <li>
-                                                <a class="active" href="#">Asitlik Düzenleyiciler</a>
+                                    <div class="pro-category li col-md-3" >
+                                        <ul >
+                                            <li *ngFor="let category of categories">
+                                                <a class="active" (click)="toggleShow()" routerLink="/urunler/{{category.header}}/{{category.slug}}/{{category.id}}" >{{category.name}}</a>
                                             </li>
-                                            <li>
-                                                <a href="#">Tatlandırıcılar
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Gıda Boyaları (Suda Çözünen)
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Gıda Boyaları (Yağda Çözünen)
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Emülgatörler
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Taşıyıcılar
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Kabartıcı Ajanlar
-                                                </a>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
-                                    <div class="pro-category li col-md-3">
-                                        <ul>
-                                            <li>
-                                                <a class="active" href="#">Asetik Asit (%80-100)</a>
+                                    <div class="pro-category li col-md-3" *ngIf="isShown" >
+                                        <ul *ngIf="serviceDetail">
+                                            <li *ngFor="let service of serviceDetail" >
+                                                <a class="active" >{{service.name}}</a>
                                             </li>
-                                            <li>
-                                                <a href="#">Fosforik Asit</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Laktik Asit</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Malik Asit</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sitrik Asit Anhidrat</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sitrik Asit Monohidrat</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sodyum Hidroksit (Payet-Boncuk Kostik)</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Tri Sodyum Sitrat</a>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
-                                    <div class="pro-category image col-md-6">
+                                    <!-- <div class="pro-category image col-md-6">
                                         <div class="pro-image">
                                             <img src="./img/pro-asetik-asit.jpg" alt="">
                                         </div>
@@ -148,12 +105,10 @@
                                                 </p>
                                                 
                                             </div>
-                                            <!-- <div class="detail-icon">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </div> -->
+                                            
                                         </div>
 
-                                    </div>
+                                    </div> -->
 
                                 </div>
                             </div>

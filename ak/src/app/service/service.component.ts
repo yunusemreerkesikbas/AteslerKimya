@@ -17,13 +17,13 @@ export class ServiceComponent implements OnInit {
     private service: ServicesService
   ) { }
 
-  isShown: boolean = true ;
+  isShown: boolean = true;
   // public isActive: boolean = false;
   // getMenuId: any;
   serviceDetail: any;
 
   currentPage: any;
-  
+
 
 
   title: "HİZMETLER" = "HİZMETLER";
@@ -42,28 +42,28 @@ export class ServiceComponent implements OnInit {
 
 
   ngOnInit(): void {
-
     this.route.params.subscribe(params => {
       this.currentPage = params['categoryid'];
-      console.log(this.currentPage)
+      console.log("currentpage", this.currentPage)
+      if (this.currentPage) {
+        console.log("categorydetail", this.service.categoryDetail);
+
+        this.serviceDetail = this.service.categoryDetail.filter((value) => {
+          let data = value.id == this.currentPage;
+          return data;
+        });
+        console.log("detail", this.serviceDetail);
+      }
     });
-
-    if (this.currentPage) {
-      this.serviceDetail = this.service.categoryDetail.filter((value) => {
-        let data = value.id == this.currentPage;
-        this.currentPage = this.currentPage
-        return data;
-      });
-      console.log(this.serviceDetail);
-    }
-    return this.serviceDetail;
-
-
+    console.log("currentpage1", this.currentPage)
   }
+
+ 
+
   toggleShow() {
     this.isShown = !this.isShown;
   }
-  
+
 
 
 }

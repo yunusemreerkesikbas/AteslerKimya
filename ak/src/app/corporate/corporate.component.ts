@@ -53,18 +53,18 @@ export class CorporateComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.currentPage = params['categoryid'];
-      console.log(this.currentPage)
-    });
+      console.log("currentpage", this.currentPage)
+      if (this.currentPage) {
+        console.log("categorydetail", this.corporate.categoryDetail);
 
-    if (this.currentPage) {
-      this.corporateDetail = this.corporate.categoryDetail.filter((value) => {
-        let data = value.id == this.currentPage;
-        this.currentPage = this.currentPage
-        return data;
-      });
-      console.log(this.corporateDetail);
-    }
-    return this.corporateDetail;
+        this.corporateDetail = this.corporate.categoryDetail.filter((value) => {
+          let data = value.id == this.currentPage;
+          return data;
+        });
+        console.log("detail", this.corporateDetail);
+      }
+    });
+    console.log("currentpage1", this.currentPage)
   }
   toggleShow() {
     this.isShown = ! this.isShown;

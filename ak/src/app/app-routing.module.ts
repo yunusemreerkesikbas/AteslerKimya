@@ -17,7 +17,10 @@ const routes: Routes = [
   {path: 'hizmetler/:categoryid', component:ServiceComponent},
   {path:'kurumsal/:categoryid',component:CorporateComponent},
   {path:'iletisim', component:ContactComponent},
-  {path:'urunler/:productslug', component:ProductDetailComponent}
+  {path:'urunler/:productsslug', component:ProductDetailComponent},
+  // {path:'urunler/:categoryid', component:ProductDetailComponent},
+  {path:'urunler/:productsslug/:categoryslug', component:ProductDetailComponent},
+  {path:'urunler/:productsheader/:productsslug/:categoryslug', component:ProductDetailComponent}
 
 ];
 
