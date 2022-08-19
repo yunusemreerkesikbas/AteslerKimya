@@ -52,13 +52,13 @@ export class CorporateComponent implements OnInit {
   ]
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.currentPage = params['categoryid'];
+      this.currentPage = params['categoryslug'];
       console.log("currentpage", this.currentPage)
       if (this.currentPage) {
         console.log("categorydetail", this.corporate.categoryDetail);
 
         this.corporateDetail = this.corporate.categoryDetail.filter((value) => {
-          let data = value.id == this.currentPage;
+          let data = value.url == this.currentPage;
           return data;
         });
         console.log("detail", this.corporateDetail);

@@ -43,13 +43,13 @@ export class ServiceComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.currentPage = params['categoryid'];
+      this.currentPage = params['categoryname'];
       console.log("currentpage", this.currentPage)
       if (this.currentPage) {
         console.log("categorydetail", this.service.categoryDetail);
 
         this.serviceDetail = this.service.categoryDetail.filter((value) => {
-          let data = value.id == this.currentPage;
+          let data = value.name == this.currentPage;
           return data;
         });
         console.log("detail", this.serviceDetail);

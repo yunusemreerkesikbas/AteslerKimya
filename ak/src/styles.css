@@ -167,7 +167,9 @@ a {
     text-decoration: none;
     color: #fff;
 }
-
+a:hover{
+    color: #fff;
+}
 #header {
     display: flex;
     align-items: center;
@@ -247,7 +249,7 @@ a {
 }
 #about .title-container{
     animation: fadeInUp;
-    animation-duration: 5s;
+    animation-duration: 3s;
 }
 #about .about-title {
     display: flex;
@@ -269,7 +271,7 @@ a {
 .mainpage {
     display: flex;
     align-items: center;
-    margin: 60px 0 0 40px;
+    margin: 20px 0 0 40px;
 }
 
 .mainpage li {
@@ -607,7 +609,7 @@ footer#ak-footer {
 .service .pro-group-alt-title .service-title{
     cursor: pointer;
     color: #fff;
-    padding: 15px 0!important;
+    padding: 15px 0 15px 15px!important;
     margin-bottom: 10px;
 
 }

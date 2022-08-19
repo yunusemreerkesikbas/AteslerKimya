@@ -1,12 +1,7 @@
 <section id="main">
-
-    
-    <div class="col-md-12">
+    <app-sidebar></app-sidebar>
+    <div class="col-md-11">
         <div class="mainpage" style="position: relative;">
-            <div>
-                <app-sidebar></app-sidebar>
-            </div>
-        
             <div class="product col-md-11">
                 <div class="container">
                     <div class="row">
@@ -15,16 +10,15 @@
                                 <a routerLink="/kurumsal">{{title}}</a>
                             </div>
 
-                            <div class="pro-group-alt-title" id="pro-group-title" *ngFor="let category of categories">
-                                <div class="service-title active">
-                                    <a (click)="toggleShow()"
-                                        routerLink="/kurumsal/{{category.id}}">{{category.name|uppercase}}</a>
+                            <div class="pro-group-alt-title" id="pro-group-title" *ngFor="let category of categories" (click)="toggleShow()" routerLink="/kurumsal/{{category.slug}}">
+                                <div class="service-title active" >
+                                    <a>{{category.name|uppercase}}</a>
                                 </div>
 
                             </div>
 
                         </div>
-                        <div class="service-container animate__fadeInUp col-md-9" *ngIf="isShown">
+                        <div class="service-container animate__fadeInUp col-md-9" >
 
                             <div class="container-fluid">
                                 <div class="row">

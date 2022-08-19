@@ -1,10 +1,9 @@
-<!-- <app-navbar></app-navbar> -->
 
 <section id="main" >
-    <div class="col-md-12">
-        <div class="mainpage" style="margin: 20px 0 0 40px;">
+<app-sidebar></app-sidebar>
 
-            <app-sidebar></app-sidebar>
+    <div class="col-md-11">
+        <div class="mainpage" >
             <div class="product col-md-11">
                 <div class="container">
                     <div class="row">
@@ -14,7 +13,7 @@
                             </div>
                             <div class="pro-group">
                                 <div class="pro-group-title">
-                                    <h1>{{group_title}}</h1>
+                                    <a routerLink="/urunler">{{group_title}}</a>
                                 </div>
                                 <div class="icon">
                                     <i class="fa-solid fa-arrow-left"></i>
@@ -26,9 +25,9 @@
                                     <h3>{{group_alt_title}}</h3>
                                 </div>
                             </div>
-                            <div class="product-category">
-                                <div class="pro-group-title">
-                                    <h1>GIDA KİMYASALLARI</h1>
+                            <div class="product-category" >
+                                <div class="pro-group-title" >
+                                    <h1 *ngIf="categoryTitle">{{categoryTitle[0]?.header}}</h1>
                                 </div>
                                 <div class="icon">
                                     <i class="fa-solid fa-arrow-right"></i>
@@ -53,62 +52,44 @@
                             <div class="container-fluid">
                                 <div class="row">
 
-                                    <div class="pro-category li col-md-3" >
+                                    <div class="pro-category li col-md-3" *ngIf="categoryTitle">
                                         <ul >
-                                            <li *ngFor="let category of categories">
-                                                <a class="active" (click)="toggleShow()" routerLink="/urunler/{{category.header}}/{{category.slug}}/{{category.id}}" >{{category.name}}</a>
+                                            <li *ngFor="let title of categoryTitle">
+                                                <a class="active" routerLink="/urunler/{{title.header_slug}}/{{title.slug}}/{{title.id}}"  >{{title?.name}}</a>
                                             </li>
                                             
                                         </ul>
                                     </div>
-                                    <div class="pro-category li col-md-3" *ngIf="isShown" >
+                                    <div class="pro-category li col-md-3"  >
                                         <ul *ngIf="serviceDetail">
                                             <li *ngFor="let service of serviceDetail" >
-                                                <a class="active" >{{service.name}}</a>
+                                                <a class="active" routerLink="/urunler/{{service.header_slug}}/{{service.category_slug}}/{{service.categoryId}}/{{service.slug}}" >{{service.name}}</a>
                                             </li>
                                             
                                         </ul>
                                     </div>
-                                    <!-- <div class="pro-category image col-md-6">
+                                    <div class="pro-category image col-md-6" *ngIf="detailPage">
                                         <div class="pro-image">
-                                            <img src="./img/pro-asetik-asit.jpg" alt="">
+                                            <img [src]="detailPage[0]?.img" alt="">
                                         </div>
                                         <div class="pro-detail">
                                             <div class="detail-title">
-                                                <p>Asetik Asit (%80 - 100)</p>
+                                                <p>{{detailPage[0]?.title}}</p>
                                             </div>
                                             <div class="detail-code">
-                                                <p>Ürün Kodu: E 260 </p>
+                                                <p>{{detailPage[0]?.product_code}}</p>
                                             </div>
                                             <div class="detail-sort">
                                                 <p>Ambalaj Çeşidi:</p>
                                             </div>
                                             <div class="detail-desc">
-                                                <p>
-                                                    E260 koduna sahiptir. Asetik Asit, zayıf bir asittir ve bu yüzden ev
-                                                    içerisinde temizlik maddesi olarak işlev görür. Örnek olarak,
-                                                    çaydanlıkların kireçten arındırılması, cam ve benzeri parlak
-                                                    yüzeylerin madeni birikimlerinden temizlenmesi, gösterilebilir.
-
-                                                    Asetik Asit'in ayrıca koruma görevi vardır, gıdalarda ve soslarda
-                                                    koruma amaçlı kullanılır. Turşu imalatında da görev alması bu
-                                                    yüzdendir. Sağladığı asitli ortam birçok mikroorganizmanın oluşumuna
-                                                    engel teşkil etmektedir. Bu da turşulaşan sebzelerin ömrünü uzatır.
-                                                    Asitlik sağlayıcı, lezzet verici, koruyucu, şelatlayıcı gibi
-                                                    görevlerde bulunur. Sirke imalatında, ilaç ve kozmetik ürünlerde,
-                                                    apre dağlama maddelerinin yapımında asetik asit kullanılır.
-
-                                                    Bunların yanı sıra, kauçuk imalatında koagülatör olarak kullanılır.
-                                                    Ayrıca deri sanayisinde ve boya yapımında işlevi bulunmaktadır.
-                                                    Alüminyum asetat tuzu, taze kesilmiş yaralarda kan dindirici olarak
-                                                    kullanılır.
-                                                </p>
+                                                <p>{{detailPage[0]?.description}}</p>
                                                 
                                             </div>
                                             
                                         </div>
 
-                                    </div> -->
+                                    </div>
 
                                 </div>
                             </div>

@@ -14,13 +14,13 @@ const routes: Routes = [
   {path:'kurumsal',component:CorporateComponent},
   {path:'hizmetler',component: ServiceComponent},
   {path:'',redirectTo:'',component:HomepageComponent,pathMatch:'full'},
-  {path: 'hizmetler/:categoryid', component:ServiceComponent},
-  {path:'kurumsal/:categoryid',component:CorporateComponent},
+  {path: 'hizmetler/:categoryname', component:ServiceComponent},
+  {path:'kurumsal/:categoryslug',component:CorporateComponent},
   {path:'iletisim', component:ContactComponent},
-  {path:'urunler/:productsslug', component:ProductDetailComponent},
-  // {path:'urunler/:categoryid', component:ProductDetailComponent},
-  {path:'urunler/:productsslug/:categoryslug', component:ProductDetailComponent},
-  {path:'urunler/:productsheader/:productsslug/:categoryslug', component:ProductDetailComponent}
+  {path:'urunler/:productsheader', component:ProductDetailComponent},
+  {path:'urunler/:productsheader/:categoryslug', component:ProductDetailComponent},
+  {path:'urunler/:productsheader/:productsslug/:categoryslug', component:ProductDetailComponent},
+  {path:'urunler/:productsheader/:productsslug/:categoryslug/:categoryDetailslug', component:ProductDetailComponent}
 
 ];
 
