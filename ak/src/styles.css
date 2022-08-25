@@ -148,7 +148,7 @@ body {
     background: linear-gradient(0deg, rgba(0,0,0,1) 45%, rgba(0,0,0,1) 100%)!important;
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'Pragati Narrow', sans-serif;
+    font-family: 'Myriad Pro', 'Pragati Narrow';
     width: 100%;
     
 }
@@ -210,14 +210,16 @@ a:hover{
     position: relative;
     font-size: 20px;
     text-transform: uppercase;
+    font-family: 'Myriad Pro';
 }
 
 #navbar li a {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: #fff;
     transition: 0.3s ease;
+    letter-spacing: 1.5px;
 }
 
 
@@ -254,18 +256,18 @@ a:hover{
 #about .about-title {
     display: flex;
 }
-#about .about-title .title-container .short-desc{
+#about .about-title .title-container .description{
     margin-bottom: 30px;
-}
-#about .about-title .title-container .short-desc p{
-    font-size: 35px;
-}
-#about .about-title .title-container .long-desc{
     width: 50%;
 }
-#about .about-title .title-container .long-desc p {
+#about .about-title .title-container .description p{
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+#about .about-title .title-container .description b {
     font-size: 80px;
     letter-spacing: 4px;
+    color: #fff;
 }
 
 .mainpage {
@@ -287,17 +289,21 @@ a:hover{
     margin-left: 100px;
 }
 .mainpage .product .pro-animation {
-    animation: fadeInLeft;
-    animation-duration: 2s;
+    animation: fadeInUp;
+    animation-duration: 1.5s;
 }
 
 .mainpage .product .pro-title {
     padding: 10px 0;
+    font-family: 'Myriad Pro';
+    font-size: 20px;
+    cursor: pointer;
 }
 
-.mainpage .product .pro-title h2 {
+.mainpage .product .pro-title a {
     color: #fff;
-    font-size: 25px;
+    font-size: 23px;
+    letter-spacing: 1.8px;
 }
 
 .mainpage .product .pro-group {
@@ -311,9 +317,10 @@ a:hover{
 
 }
 
-.mainpage .product .pro-group h1 {
+.mainpage .product .pro-group a {
     color: #fff;
-    font-size: 20px;
+    font-size: 24px;
+    letter-spacing: 2px;
 }
 
 .mainpage .product .pro-group i {
@@ -322,9 +329,10 @@ a:hover{
     font-size: 25px;
 }
 
-.mainpage .product .pro-group-alt-title h3 {
+.mainpage .product .pro-group-alt-title a {
     padding: 10px 0 10px 0;
-    font-size: 18px;
+    font-size: 20px;
+    letter-spacing: 1.6px;
 }
 
 .mainpage .product .pro-desc {
@@ -332,7 +340,7 @@ a:hover{
 }
 
 .mainpage .product .pro-desc p {
-    font-size: 12px;
+    font-size: 17px;
     line-height: 20px;
 }
 
@@ -358,6 +366,10 @@ a:hover{
     display: flex;
     justify-content: center;
 }
+.pro-card-container .pro .img-detail .detail-button a {
+    font-size: 18px;
+    letter-spacing: 1.3px;
+}
 
 .pro-card-container .pro .img-detail:hover {
     background-color: #271132;
@@ -378,14 +390,8 @@ a:hover{
 .pro-image img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
     transition: 400ms filter ease-out;
-}
-
-.product .product-category {
-    padding: 10px 15px 10px 15px;
-    border: 1px solid #fff;
-    background-color: #fff;
 }
 
 .product .product-category {
@@ -393,12 +399,19 @@ a:hover{
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    animation: fadeInLeft;
+    animation-duration: 1s;
 }
 
-.product .product-category .pro-group-title h1 {
+
+
+.product .product-category .pro-group-title a {
     color: #000;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .product .product-category .icon i {
@@ -408,19 +421,23 @@ a:hover{
 
 
 
-.pro-category-list {
-    display: flex;
-    /* align-items: self-end;
-    margin-top: 12%; */
+.pro-category ul li{
+    animation: fadeInUp;
+    animation-duration: 1.5s;
 }
 
 .pro-category-list .pro-category ul li {
     padding: 10px 0;
     border-bottom: 2px solid #382938;
+    opacity: .7;
+    cursor: pointer;
+}
+.pro-category-list .pro-category ul li:hover{
+    opacity: 1;
+    font-weight: bold;
 }
 
 .pro-category-list .pro-category ul li a {
-    opacity: .7;
     letter-spacing: 1px;
 }
 
@@ -469,7 +486,7 @@ a:hover{
     color: #000;
     line-height: 20px;
     letter-spacing: .8px;
-    font-size: 10px;
+    font-size: 13px;
 }
 
 
@@ -594,29 +611,43 @@ footer#ak-footer {
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-    animation: fadeInLeft;
+    animation: fadeInUp;
     animation-duration: 2s;
 }
 .service .pro-title {
-    margin-bottom: 50px
+    margin-bottom: 50px;
+    font-size: 20px;
+    padding: 15px 0 15px 15px!important;
 }
-.service .pro-title:hover a {
-    font-size: 25px;
-    font-weight: bold;
-    color: #fff;
-    transition: 300ms;
+.service .pro-title:hover  {
+    background-color: #fff;
+    
+}
+.service .pro-title:hover  a {
+    color: #000;
+
 }
 .service .pro-group-alt-title .service-title{
     cursor: pointer;
     color: #fff;
     padding: 15px 0 15px 15px!important;
-    margin-bottom: 10px;
-
+    font-family: 'Myriad Pro';
+    font-size: 23px;
+    border-bottom: 2px solid #382938;
+}
+.service .pro-group-alt-title .service-title a {
+    letter-spacing: 1.5px;
 }
 .service .pro-group-alt-title .service-title:hover {
     background-color: #fff;
     color: #000;
     padding: 0;
+}
+.service .pro-group-alt-title .service-title.active {
+    background-color: #fff;
+    color: #000;
+    padding: 0;
+    transition: 300ms ease-in;
 }
 .service .pro-group-alt-title .service-title:hover a {
     color: #000;

@@ -1,5 +1,4 @@
 <section id="main">
-    <app-sidebar></app-sidebar>
 
     <div class="col-md-11">
         <div class="mainpage">
@@ -7,14 +6,14 @@
             <div class="product col-md-11">
                 <div class="container">
                     <div class="row">
-                        <div class="service animate__fadeInLeft col-md-3">
+                        <div class="service animate__fadeInUp col-md-3">
                             <div class="pro-title">
                                 <a routerLink="/hizmetler">{{title}}</a>
                             </div>
 
                             <div class="pro-group-alt-title" *ngFor="let category of categories"
                                 routerLink="/hizmetler/{{category.name}}">
-                                <div class="service-title ">
+                                <div class="service-title" routerLinkActive="active"  >
                                     <a (click)="toggleShow()">{{category.name|uppercase}}</a>
                                 </div>
 

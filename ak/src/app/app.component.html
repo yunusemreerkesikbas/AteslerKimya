@@ -6,14 +6,17 @@
       <source src="../assets/video/bg.mp4" type="video/mp4">
     </video>
   </div>
+  <app-sidebar></app-sidebar>
+  <div [@routeAnimations]="getRouteAnimationData()">
+    <router-outlet></router-outlet>
 
-  <router-outlet></router-outlet>
+  </div>
 
   <app-footer></app-footer>
 
-  <!-- <div class="loader">
+  <div class="loader">
     <img src="../assets/video/loader.gif" alt="">
-  </div> -->
+  </div>
 
 
 

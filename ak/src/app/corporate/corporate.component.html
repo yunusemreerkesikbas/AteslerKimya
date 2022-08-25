@@ -1,17 +1,16 @@
 <section id="main">
-    <app-sidebar></app-sidebar>
     <div class="col-md-11">
         <div class="mainpage" style="position: relative;">
             <div class="product col-md-11">
                 <div class="container">
                     <div class="row">
                         <div class="service col-md-3  animate__fadeInLeft">
-                            <div class="pro-title">
-                                <a routerLink="/kurumsal">{{title}}</a>
+                            <div class="pro-title" routerLink="/kurumsal">
+                                <a >{{title}}</a>
                             </div>
 
                             <div class="pro-group-alt-title" id="pro-group-title" *ngFor="let category of categories" (click)="toggleShow()" routerLink="/kurumsal/{{category.slug}}">
-                                <div class="service-title active" >
+                                <div class="service-title"  routerLinkActive="active">
                                     <a>{{category.name|uppercase}}</a>
                                 </div>
 

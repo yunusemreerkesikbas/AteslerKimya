@@ -2,5 +2,44 @@
     position: absolute;
     top: 45%;
     left: 3%;
-    
+    z-index: 999999;
+    font-family: 'Myriad Pro';
+    font-size: 20px;
+    display: flex;
+}
+
+.sidebar ul li {
+    margin-bottom: 12px;
+    opacity: .6;
+    display: flex
+}
+
+.sidebar ul li:hover {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.sidebar ul li a {
+    letter-spacing: 1.7px;
+}
+
+/* .scroll-box{
+    background-color: #1d1d1f;
+    border-radius: 10px;
+    margin-right: 8px;
+    margin-bottom: 12px;
+    height: 10%;
+} */
+
+.scroll-btn {
+    display: none!important;
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    /* background: #fff; */
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-right: 10px;
 }

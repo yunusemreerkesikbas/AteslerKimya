@@ -1,6 +1,5 @@
 
 <section id="main" >
-<app-sidebar></app-sidebar>
 
     <div class="col-md-11">
         <div class="mainpage" >
@@ -25,9 +24,9 @@
                                     <h3>{{group_alt_title}}</h3>
                                 </div>
                             </div>
-                            <div class="product-category" >
-                                <div class="pro-group-title" >
-                                    <h1 *ngIf="categoryTitle">{{categoryTitle[0]?.header}}</h1>
+                            <div class="product-category animate__fadeInLeft" >
+                                <div class="pro-group-title animate__fadeInLeft" >
+                                    <a *ngIf="categoryTitle">{{categoryTitle[0]?.header}}</a>
                                 </div>
                                 <div class="icon">
                                     <i class="fa-solid fa-arrow-right"></i>
@@ -52,18 +51,18 @@
                             <div class="container-fluid">
                                 <div class="row">
 
-                                    <div class="pro-category li col-md-3" *ngIf="categoryTitle">
+                                    <div class="pro-category li col-md-3 " *ngIf="categoryTitle">
                                         <ul >
-                                            <li *ngFor="let title of categoryTitle">
-                                                <a class="active" routerLink="/urunler/{{title.header_slug}}/{{title.slug}}/{{title.id}}"  >{{title?.name}}</a>
+                                            <li [ngClass]="'animate__fadeInUp'" *ngFor="let title of categoryTitle" routerLink="/urunler/{{title.header_slug}}/{{title.slug}}/{{title.id}}"  >
+                                                <a class="active" >{{title?.name}}</a>
                                             </li>
                                             
                                         </ul>
                                     </div>
-                                    <div class="pro-category li col-md-3"  >
+                                    <div class="pro-category li col-md-3" (click)="clickEvent()" [ngClass]="status ? 'animate__fadeInUp' : '' "  >
                                         <ul *ngIf="serviceDetail">
-                                            <li *ngFor="let service of serviceDetail" >
-                                                <a class="active" routerLink="/urunler/{{service.header_slug}}/{{service.category_slug}}/{{service.categoryId}}/{{service.slug}}" >{{service.name}}</a>
+                                            <li   *ngFor="let service of serviceDetail" routerLink="/urunler/{{service.header_slug}}/{{service.category_slug}}/{{service.categoryId}}/{{service.slug}}" >
+                                                <a class="active"  >{{service.name}}</a>
                                             </li>
                                             
                                         </ul>

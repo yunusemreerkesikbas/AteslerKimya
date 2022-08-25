@@ -14,7 +14,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { PageDetailComponent } from './page-details/page-detail/page-detail.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SafePipe } from './contact/safe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,14 +28,18 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     SidebarComponent,
     PageDetailComponent,
     ContactComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
+    
+    
     
     
   ],

@@ -11,12 +11,13 @@ import { ServiceComponent } from './service/service.component';
 const routes: Routes = [
   
   {path:'urunler',component:ProductComponent},
-  {path:'kurumsal',component:CorporateComponent},
+  {path:'kurumsal',component:CorporateComponent },
   {path:'hizmetler',component: ServiceComponent},
   {path:'',redirectTo:'',component:HomepageComponent,pathMatch:'full'},
   {path: 'hizmetler/:categoryname', component:ServiceComponent},
   {path:'kurumsal/:categoryslug',component:CorporateComponent},
   {path:'iletisim', component:ContactComponent},
+  {path:'iletisim/:categoryslug',component:ContactComponent},
   {path:'urunler/:productsheader', component:ProductDetailComponent},
   {path:'urunler/:productsheader/:categoryslug', component:ProductDetailComponent},
   {path:'urunler/:productsheader/:productsslug/:categoryslug', component:ProductDetailComponent},
