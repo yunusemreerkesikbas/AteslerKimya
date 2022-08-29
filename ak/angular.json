@@ -26,7 +26,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "assets/js/scrip.js"
+              "src/assets/js/script.js"
             ]
           },
           "configurations": {
@@ -98,7 +98,7 @@
               
             ],
             "scripts": [
-              "src/app/assets/js/script.js"
+              "src/assets/js/script.js"
             ]
           }
         }

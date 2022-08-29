@@ -115,9 +115,11 @@ section {
 
 body {
     line-height: 1;
-    overflow: hidden;
-    
-
+    overflow-y:scroll;
+    /* scrollbar-width: none; */
+}
+body::-webkit-scrollbar{
+    display: none;
 }
 
 ol,
@@ -256,15 +258,16 @@ a:hover{
 #about .about-title {
     display: flex;
 }
+
 #about .about-title .title-container .description{
     margin-bottom: 30px;
-    width: 50%;
+    width: 60%;
 }
-#about .about-title .title-container .description p{
+#about .about-title .title-container .description h1{
     font-size: 35px;
     margin-bottom: 20px;
 }
-#about .about-title .title-container .description b {
+#about .about-title .title-container .description h1 strong {
     font-size: 80px;
     letter-spacing: 4px;
     color: #fff;
@@ -595,6 +598,7 @@ footer#ak-footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    animation:  2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
 
 .loader img {
@@ -611,13 +615,14 @@ footer#ak-footer {
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-    animation: fadeInUp;
-    animation-duration: 2s;
+    
 }
 .service .pro-title {
     margin-bottom: 50px;
     font-size: 20px;
     padding: 15px 0 15px 15px!important;
+    animation: fadeInUp;
+    animation-duration: 1.5s;
 }
 .service .pro-title:hover  {
     background-color: #fff;
@@ -626,6 +631,13 @@ footer#ak-footer {
 .service .pro-title:hover  a {
     color: #000;
 
+}
+.pro-group-alt-title .product-title{
+    margin-bottom: 30px;
+}
+.pro-group-alt-title .product-title a {
+    color: #fff;
+    font-size: 18px;
 }
 .service .pro-group-alt-title .service-title{
     cursor: pointer;

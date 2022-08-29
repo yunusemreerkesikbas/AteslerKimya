@@ -24,6 +24,9 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.2.0",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.6.0",
+    "ngx": "^2.4.0",
+    "ngx-scrollbar": "^10.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

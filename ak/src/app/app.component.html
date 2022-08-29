@@ -1,4 +1,5 @@
-<body>
+<body appHorizontalScroll>
+  
 
   <app-navbar></app-navbar>
   <div class="atesler-home-background atesler-page-background is-video">
@@ -7,16 +8,18 @@
     </video>
   </div>
   <app-sidebar></app-sidebar>
-  <div [@routeAnimations]="getRouteAnimationData()">
+  <div >
     <router-outlet></router-outlet>
 
   </div>
+  
 
   <app-footer></app-footer>
 
   <div class="loader">
     <img src="../assets/video/loader.gif" alt="">
   </div>
+  
 
 
 

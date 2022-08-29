@@ -1,14 +1,32 @@
-function laoder() {
-    document.querySelector('.loader').style.display = 'none';
-}
-function fadeOut() {
-    setInterval(laoder, 2500);
-}
-window.onload = fadeOut();
-const pro = document.getElementById('pro-group-title');
-pro.addEventListener('click', () => {
-    pro.classList.add('active');
+$(document).ready(function() {
+	$('.loader').slideUp("slow");
+	$(window).scroll(function loader(){
+		var header = $('.header'),
+			scroll = $(window).scrollTop();
+		if (scroll >= header.height()) {
+			header.addClass('sticky').addClass('custom-animated', 20000);
+            
+		}
+		else {
+            
+			header.removeClass('sticky custom-animated');
+		}
+	})
+    // setInterval(function() {
+	// 	loader
+	// },3000)
 })
+
+
+// const loader = document.getElementsByClassName('loader'); 
+// function laoder() {
+//     document.querySelector('.loader').style.display = 'none';
+// }
+// function fadeOut() {
+//     setInterval(laoder, 2500);
+// }
+// window.onload = fadeOut();
+
 
 function scrollBar(){
     console.log('deene')

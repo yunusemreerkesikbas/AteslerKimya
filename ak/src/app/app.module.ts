@@ -16,6 +16,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SafePipe } from './contact/safe.pipe';
+import { HorizontalScrollDirective } from './horizontal-scroll-directive.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { SafePipe } from './contact/safe.pipe';
     ContactComponent,
     ProductDetailComponent,
     SafePipe,
+    HorizontalScrollDirective,
   ],
   imports: [
     BrowserModule,
@@ -37,11 +40,7 @@ import { SafePipe } from './contact/safe.pipe';
     FontAwesomeModule,
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule
-    
-    
-    
-    
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

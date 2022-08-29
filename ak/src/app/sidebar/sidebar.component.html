@@ -1,12 +1,13 @@
-<div class="sidebar col-md-2" style="width: 100px;">
+<div class="sidebar col-md-2" (wheel)="restrainScrolling($event)" 
+    style="width: 100px;">
     <!-- <div class="scroll-box">
         <span></span>
     </div> -->
-    <div class="links">
+    <div class="links ">
 
         <ul class="pages">
 
-            <li *ngFor="let page of pages">
+            <li *ngFor="let page of pages ">
 
                 <span id="scroll-btn" class="scroll-btn" ></span>
                 <a class="page_name" id="page_name" routerLinkActive="scrollBar()" routerLink="/{{page.slug}}">{{page.name}}</a>

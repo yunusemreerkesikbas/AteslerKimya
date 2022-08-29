@@ -6,8 +6,13 @@
     font-family: 'Myriad Pro';
     font-size: 20px;
     display: flex;
-}
+    overflow-y: scroll;
+    scrollbar-width: none;
 
+}
+.sidebar::-webkit-scrollbar{
+    display: none;
+}
 .sidebar ul li {
     margin-bottom: 12px;
     opacity: .6;
@@ -21,22 +26,15 @@
 
 .sidebar ul li a {
     letter-spacing: 1.7px;
+    font-size: 16px;
 }
 
-/* .scroll-box{
-    background-color: #1d1d1f;
-    border-radius: 10px;
-    margin-right: 8px;
-    margin-bottom: 12px;
-    height: 10%;
-} */
 
 .scroll-btn {
-    display: none!important;
+    display: none !important;
     background-color: #fff;
     width: 10px;
     height: 10px;
-    /* background: #fff; */
     display: block;
     position: relative;
     border-radius: 50%;

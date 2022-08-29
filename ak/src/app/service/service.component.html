@@ -6,13 +6,14 @@
             <div class="product col-md-11">
                 <div class="container">
                     <div class="row">
-                        <div class="service animate__fadeInUp col-md-3">
-                            <div class="pro-title">
+                        <div class="service col-md-3">
+                            <div class="pro-title animate__fadeInUp">
                                 <a routerLink="/hizmetler">{{title}}</a>
                             </div>
 
                             <div class="pro-group-alt-title" *ngFor="let category of categories"
                                 routerLink="/hizmetler/{{category.name}}">
+                                
                                 <div class="service-title" routerLinkActive="active"  >
                                     <a (click)="toggleShow()">{{category.name|uppercase}}</a>
                                 </div>
