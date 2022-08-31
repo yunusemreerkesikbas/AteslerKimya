@@ -11,7 +11,6 @@ import { FooterComponent } from './footer/footer.component';
 import { CorporateComponent } from './corporate/corporate.component';
 import { ServiceComponent } from './service/service.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { PageDetailComponent } from './page-details/page-detail/page-detail.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,7 +27,6 @@ import { HorizontalScrollDirective } from './horizontal-scroll-directive.directi
     CorporateComponent,
     ServiceComponent,
     SidebarComponent,
-    PageDetailComponent,
     ContactComponent,
     ProductDetailComponent,
     SafePipe,

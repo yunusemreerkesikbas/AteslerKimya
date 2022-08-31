@@ -21,31 +21,37 @@ export class CorporateComponent implements OnInit {
   categories = [
     {
       id:1,
+      corporate:'kurumsal',
       name:"hakkımızda",
       slug:'hakkimizda'
     },
     {
       id:2,
+      corporate:'kurumsal',
       name:"değerlerimiz",
       slug:'degerlerimiz'
     },
     {
       id:3,
+      corporate:'kurumsal',
       name:"gücümüz",
       slug:'gucumuz'
     },
     {
       id:4,
+      corporate:'kurumsal',
       name:"VİZYONUMUZ",
       slug:'vizyonumuz'
     },
     {
       id:5,
+      corporate:'kurumsal',
       name:"misyonumuz",
       slug:'misyonumuz'
     },
     {
       id:6,
+      corporate:'kurumsal',
       name:"haberler",
       slug:'haberler'
     },

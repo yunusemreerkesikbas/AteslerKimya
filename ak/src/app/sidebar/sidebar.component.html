@@ -7,10 +7,29 @@
 
         <ul class="pages">
 
-            <li *ngFor="let page of pages ">
-
-                <span id="scroll-btn" class="scroll-btn" ></span>
-                <a class="page_name" id="page_name" routerLinkActive="scrollBar()" routerLink="/{{page.slug}}">{{page.name}}</a>
+            <li >
+                <!-- <span id="scroll-btn" class="scroll-btn" ></span> -->
+                <a class="home" id="home" routerLink="/">Intro</a>
+            </li>
+            <li >
+                <!-- <span id="scroll-btn" class="scroll-btn" ></span> -->
+                <a class="product" id="product" routerLink="/urunler">Ürünler</a>
+            </li>
+            <li >
+                <!-- <span id="scroll-btn" class="scroll-btn" ></span> -->
+                <a class="service" id="service"  routerLink="/hizmetler" style="margin-top: 0;">Hizmetler</a>
+            </li>
+            <li >
+                <!-- <span id="scroll-btn" class="scroll-btn" ></span> -->
+                <a class="corporate" id="corporate" routerLink="/kurumsal">Kurumsal</a>
+            </li>
+            <li >
+                <!-- <span id="scroll-btn" class="scroll-btn" ></span> -->
+                <a class="contact" id="contact" routerLink="/iletisim">İletişim</a>
+            </li>
+            <li >
+                <!-- <span id="scroll-btn" class="scroll-btn" ></span> -->
+                <a class="ik" id="ik" routerLink="/ik">İK</a>
             </li>
 
         </ul>

@@ -3,11 +3,24 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceDetail } from './detail';
 // import { Service } from './service/service';
 import { ServicesService } from '../services/services.service';
+import { trigger, state, style, transition, animate } from "@angular/animations";
 
 @Component({
   selector: 'app-service',
   templateUrl: './service.component.html',
-  styleUrls: ['./service.component.css']
+  styleUrls: ['./service.component.css'],
+  // animations: [
+  //   trigger("listAnimation", [
+  //     state("fadeUp", style({color:'#000' })),
+  //     transition(":enter", [
+  //       style({transition: '300ms ease-in',color:'#000' }),
+  //       animate("500ms")
+  //     ]),
+  //     transition(':leave', [
+  //       animate(500, style({ transform: 'translateX(0%))', color:'#000' }))
+  //     ])
+  //   ])
+  // ]
 })
 export class ServiceComponent implements OnInit {
   constructor(

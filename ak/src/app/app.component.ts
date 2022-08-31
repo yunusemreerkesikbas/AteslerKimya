@@ -10,6 +10,8 @@ import {
   // ...
 } from '@angular/animations';
 import { debounceTime, fromEvent } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -22,30 +24,29 @@ import { debounceTime, fromEvent } from 'rxjs';
 export class AppComponent implements OnInit {
 
   title = 'Ateşler Kimya';
-  previousPosition = -1;
-  public scroll: boolean | undefined;
-  @ViewChild('wrapper') wrapperElement: ElementRef | undefined;
+  currentSection = 'section1';
+
+  constructor(private _router: Router, private _route: ActivatedRoute, private _location: Location) {
+  }
 
   ngOnInit() {
-    this.scroll = false;
-    fromEvent(window, 'mousewheel').pipe(debounceTime(0)).subscribe(($event: WheelEvent) => {
-      const position = $event.wheelDelta || -$event.detail;
-      if ($event.wheelDelta >= 0) {
-        console.log('go up');
-        this.scroll = true;
-      } else {
-        console.log('go down');
-        this.scroll = false;
-      }
+    this._route.params.subscribe(params => {
+      this.currentSection = params['urunler'];
+      console.log('section',this.currentSection);
+      this.scrollTo(this.currentSection);
+    });
+  }
 
-      this.previousPosition = position;
-      $event.stopImmediatePropagation();
-      $event.stopPropagation();
-      $event.preventDefault();
-    })
-    // pipe(debounceTime(0)).subscribe(($event: WheelEvent) => {
+  onSectionChange(sectionId: string) {
+    this._location.go(sectionId);
+    this.currentSection = sectionId;
+  }
 
-  };
+  scrollTo(section: string) {
+    
+    document.getElementById(section)?.scrollIntoView();
+    
+  }
 }
   
 

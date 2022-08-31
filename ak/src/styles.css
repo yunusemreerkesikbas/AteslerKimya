@@ -405,7 +405,7 @@ a:hover{
     padding: 10px 15px 10px 15px;
     border: 1px solid #fff;
     background-color: #fff;
-    animation: fadeInLeft;
+    animation: fadeInUp;
     animation-duration: 1s;
 }
 
@@ -615,6 +615,8 @@ footer#ak-footer {
     display: flex;
     flex-direction: column;
     margin-top: 50px;
+    animation: fadeInUp;
+    animation-duration: 1.5s;
     
 }
 .service .pro-title {
@@ -659,7 +661,7 @@ footer#ak-footer {
     background-color: #fff;
     color: #000;
     padding: 0;
-    transition: 300ms ease-in;
+    /* transition: 300ms ease-in; */
 }
 .service .pro-group-alt-title .service-title:hover a {
     color: #000;

@@ -4,12 +4,12 @@
             <div class="product col-md-11">
                 <div class="container">
                     <div class="row">
-                        <div class="service col-md-3  animate__fadeInLeft">
+                        <div class="service col-md-3  animate__fadeInUp" >
                             <div class="pro-title" routerLink="/kurumsal">
                                 <a >{{title}}</a>
                             </div>
 
-                            <div class="pro-group-alt-title" id="pro-group-title" *ngFor="let category of categories" (click)="toggleShow()" routerLink="/kurumsal/{{category.slug}}">
+                            <div class="pro-group-alt-title" id="pro-group-title" *ngFor="let category of categories" (click)="toggleShow()" routerLink="/{{category.corporate}}/{{category.slug}}">
                                 <div class="service-title"  routerLinkActive="active">
                                     <a>{{category.name|uppercase}}</a>
                                 </div>
@@ -25,10 +25,10 @@
                                     <div class="col-md-7" *ngIf="corporateDetail">
                                         <div class="service-detail">
                                             <div class="service-img">
-                                                <img [src]="corporateDetail[0].categoryImg" alt="">
+                                                <img [src]="corporateDetail[0]?.categoryImg" alt="">
                                             </div>
                                             <div class="service-detail-desc">
-                                                <p>{{corporateDetail[0].description}}</p>
+                                                <p>{{corporateDetail[0]?.description}}</p>
                                             </div>
                                         </div>
                                     </div>

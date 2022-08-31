@@ -1,10 +1,13 @@
 $(document).ready(function() {
-	$('.loader').slideUp("slow");
-	$(window).scroll(function loader(){
+	$(".loader").delay(2500);
+	$('.loader').slideUp(500);
+	
+	$(window).scroll(function (){
 		var header = $('.header'),
 			scroll = $(window).scrollTop();
 		if (scroll >= header.height()) {
 			header.addClass('sticky').addClass('custom-animated', 20000);
+			// setInterval($('.loader').slideUp("slow"), 3000);
             
 		}
 		else {
@@ -12,9 +15,7 @@ $(document).ready(function() {
 			header.removeClass('sticky custom-animated');
 		}
 	})
-    // setInterval(function() {
-	// 	loader
-	// },3000)
+    
 })
 
 
