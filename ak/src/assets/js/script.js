@@ -15,6 +15,10 @@ $(document).ready(function() {
 			header.removeClass('sticky custom-animated');
 		}
 	})
+	$('.service-title').click(function () {
+		console.log('works');
+		$.when($('.service-detail').fadeOut('slow'))
+	})
     
 })
 
@@ -39,3 +43,4 @@ function scrollBar(){
         e.preventDefault();
     })
 }
+

@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -34,7 +35,10 @@ export class ProductComponent implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
-  constructor() { }
+  constructor(
+    private _router: Router
+  ) { }
+  
   
   title: "ÜRÜNLER" ="ÜRÜNLER";
   products = [
@@ -74,6 +78,16 @@ export class ProductComponent implements OnInit {
       img: '../../assets/img/pro-image-card-1.jpg'
     }
   ]
+  @HostListener('wheel', ['$event'])
+  onWheelScroll(evento: WheelEvent) {
+    // Scroll down go to gallery
+    if (evento.deltaY > 0) {
+      this._router.navigate(['/hizmetler'])
+      // Scroll up go to about
+    } else {
+      this._router.navigate(['/'])
+    }
+  }
   ngOnInit(): void {
     state('open', style({
       height: '200px',

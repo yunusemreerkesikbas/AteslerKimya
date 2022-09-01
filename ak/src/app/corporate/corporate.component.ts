@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CorporateService } from '../services/corporate.service';
 
 @Component({
@@ -13,8 +13,20 @@ export class CorporateComponent implements OnInit {
 
   constructor(
     private route:ActivatedRoute,
-    private corporate:CorporateService
+    private corporate:CorporateService,
+    private _router:Router
   ) { }
+
+  @HostListener('wheel', ['$event'])
+  onWheelScroll(evento: WheelEvent) {
+    // Scroll down go to gallery
+    if (evento.deltaY > 0) {
+      this._router.navigate(['/iletisim'])
+      // Scroll up go to about
+    } else {
+      this._router.navigate(['/kurumsal'])
+    }
+  }
   corporateDetail: any;
   currentPage: any;
   title: "KURUMSAL" = "KURUMSAL";

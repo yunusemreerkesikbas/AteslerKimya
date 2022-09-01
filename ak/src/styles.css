@@ -405,7 +405,7 @@ a:hover{
     padding: 10px 15px 10px 15px;
     border: 1px solid #fff;
     background-color: #fff;
-    animation: fadeInUp;
+    animation: fadeInLeft;
     animation-duration: 1s;
 }
 
@@ -462,6 +462,8 @@ a:hover{
 .pro-category-list .pro-category.image {
     background-color: #fff;
     padding: 0 35px;
+    animation: fadeInRight;
+    animation-duration: 1s;
 }
 
 .pro-category-list .pro-category.image .detail-title {

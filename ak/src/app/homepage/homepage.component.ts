@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _router:Router
+  ) { }
   short_desc: "GÜÇLÜ İTHALAT AĞIMIZLA" = "GÜÇLÜ İTHALAT AĞIMIZLA"; 
   long_desc: "kaliteyi sizlerle buluşturuyoruz...." = "kaliteyi sizlerle buluşturuyoruz...."; 
+  @HostListener('wheel', ['$event'])
+  onWheelScroll(evento: WheelEvent) {
+    // Scroll down go to gallery
+    if (evento.deltaY > 0) {
+      this._router.navigate(['/urunler'])
+      // Scroll up go to about
+    } else {
+      this._router.navigate(['/'])
+    }
+  }
   ngOnInit(): void {
   }
 

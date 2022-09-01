@@ -1,5 +1,5 @@
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ServiceDetail } from './detail';
 // import { Service } from './service/service';
 import { ServicesService } from '../services/services.service';
@@ -10,14 +10,20 @@ import { trigger, state, style, transition, animate } from "@angular/animations"
   templateUrl: './service.component.html',
   styleUrls: ['./service.component.css'],
   // animations: [
-  //   trigger("listAnimation", [
-  //     state("fadeUp", style({color:'#000' })),
+  //   trigger("inOutPaneAnimation", [
   //     transition(":enter", [
-  //       style({transition: '300ms ease-in',color:'#000' }),
-  //       animate("500ms")
+  //       style({ opacity: 0, transform: "translateX(-100%)" }), //apply default styles before animation starts
+  //       animate(
+  //         "750ms ease-in-out",
+  //         style({ opacity: 1, transform: "translateX(0)" })
+  //       )
   //     ]),
-  //     transition(':leave', [
-  //       animate(500, style({ transform: 'translateX(0%))', color:'#000' }))
+  //     transition(":leave", [
+  //       style({ opacity: 1, transform: "translateX(0)" }), //apply default styles before animation starts
+  //       animate(
+  //         "600ms ease-in-out",
+  //         style({ opacity: 0, transform: "translateX(-100%)" })
+  //       )
   //     ])
   //   ])
   // ]
@@ -25,8 +31,20 @@ import { trigger, state, style, transition, animate } from "@angular/animations"
 export class ServiceComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private service: ServicesService
+    private service: ServicesService,
+    private _router:Router
   ) { }
+
+  @HostListener('wheel', ['$event'])
+  onWheelScroll(evento: WheelEvent) {
+    // Scroll down go to gallery
+    if (evento.deltaY > 0) {
+      this._router.navigate(['/kurumsal'])
+      // Scroll up go to about
+    } else {
+      this._router.navigate(['/'])
+    }
+  }
 
   isShown: boolean = true;
   // activeClass:any
@@ -68,11 +86,9 @@ export class ServiceComponent implements OnInit {
   toggleShow() {
     this.isShown = !this.isShown;
   }
-  isActiveProject: boolean | undefined;
+  
 
-  // activeProject() {
-  //   this.isActiveProject = true;
-  // }
+  
 
 
 
